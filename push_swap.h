@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/04 17:35:08 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:38:20 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_node
 	int				index;
 	int				target_pos;
 	int				number;
+	int				cost_a;
+	int				cost_b;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -75,11 +77,14 @@ void printeo_b(t_node **stack_b,int len);
 ////////////ORDER//////////
 int		ft_is_order(t_node *head);
 int		ft_find_highest(t_node *stack);
-int		ft_find_lower(t_node *stack);
+int		ft_find_lower_index(t_node *stack);
 void	ft_sort_three(t_node **stack_a);
 void	ft_calc_index(t_node **stack_a, int len, int size, int aux_len);
 void	ft_calc_position(t_node **stack_a, int len);
 void	ft_target_find(t_node **stack_a, t_node **stack_b);
-void ft_push_all_b(t_node **stack_a,int len);
+void ft_push_all_b(t_node **stack_a,t_node **stack_b, int len);
+void ft_cost(t_node **stack_a, t_node **stack_b,int len);
+int ft_cost_top(t_node **stack, int pos);
+int ft_target_find_norm(t_node **aux_a,t_node **aux_b,int size_a);
 
 #endif

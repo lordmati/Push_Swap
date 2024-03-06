@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:05:35 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/04 19:42:51 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:26:09 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void printeo(t_node **stack_a,int len)
 void printeo_b(t_node **stack_b,int len)
 {
 	int i = 0;
-	printf("VALOR NODO   VALOR POSICION  VALOR INDICE    VALOR TARGET\n");
+	printf("VALOR NODO   VALOR POSICION  VALOR INDICE    VALOR TARGET          VALOR COSTO_A        VALOR COSTO_B\n");
 	while(i < len)
 	{
-		printf("%d                 %d                %d               %d\n",(*stack_b)->number,(*stack_b)->pos,(*stack_b)->index,(*stack_b)->target_pos);
+		printf("%d                 %d                %d               %d                    %d               %d\n",(*stack_b)->number,(*stack_b)->pos,(*stack_b)->index,(*stack_b)->target_pos,(*stack_b)->cost_a,(*stack_b)->cost_b);
 		*stack_b = (*stack_b)->next;
 		i++;
 	}

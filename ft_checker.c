@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:55:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/04 19:41:33 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:16:48 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,13 @@ void	ft_setup(int argc, int *tab)
 	if (ft_is_order(stack_a) == 1)
 		exit(0);
 	ft_calc_index(&stack_a, argc + 1, argc, argc);
-	ft_calc_position(&stack_a,argc);
-	ft_push_all_b(&stack_a,argc);
-	printeo(&stack_a,argc);
-	printeo_b(&stack_b,10);
+	ft_push_all_b(&stack_a,&stack_b,argc);
+	ft_calc_position(&stack_a,ft_list_size(&stack_a));
+	ft_calc_position(&stack_b,ft_list_size(&stack_b));
+	printeo(&stack_a,ft_list_size(&stack_a));
+	ft_target_find(&stack_a,&stack_b);
+	ft_cost(&stack_a,&stack_b,ft_list_size(&stack_b));
+	printeo_b(&stack_b,ft_list_size(&stack_b));
 	if (argc == 2)
 		move_prints(&stack_a, &stack_b, 1);
 	else if (argc == 3)

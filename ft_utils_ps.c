@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:30:40 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/04 19:44:07 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:38:02 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	ft_list_size(t_node **stack)
 	size = 0;
 	aux = *stack;
 	initial_node = *stack;
+	if(*stack == NULL)
+		return(0);
 	while (aux->next != initial_node)
 	{
 		size++;
@@ -93,17 +95,17 @@ int	ft_list_size(t_node **stack)
 	return (size + 1);
 }
 
-int	ft_find_lower(t_node *stack)
+int	ft_find_lower_index(t_node *stack)
 {
 	int		result;
 	t_node	*aux;
 
 	aux = stack;
-	result = aux->number;
+	result = aux->index;
 	while (1)
 	{
-		if (aux->number < result)
-			result = aux->number;
+		if (aux->index < result)
+			result = aux->index;
 		aux = aux->next;
 		if (aux == stack)
 			break ;
