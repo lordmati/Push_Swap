@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 19:30:35 by misaguir          #+#    #+#             */
-/*   Updated: 2024/02/29 16:53:50 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/09 17:00:55 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,37 @@ t_node	*ft_stack_a(int *tab, int len)
 	head->prev = node;
 	node->next = head;
 	return (head);
+}
+void ft_move_rotate_a(t_node **stack_a,t_node **stack_b,int cost)
+{
+	while(cost)
+	{
+		if(cost > 0)
+		{
+			move_prints(stack_a,stack_b,RA);
+			cost--;
+		}
+		else if (cost < 0)
+		{
+			move_prints(stack_a,stack_b,RRA);
+			cost++;
+		}
+	}
+}
+
+void ft_move_rotate_b(t_node **stack_a,t_node **stack_b,int cost)
+{
+	while(cost)
+	{
+		if(cost > 0)
+		{
+			move_prints(stack_a,stack_b,RB);
+			cost--;
+		}
+		else if (cost < 0)
+		{
+			move_prints(stack_a,stack_b,RRB);
+			cost++;
+		}
+	}
 }

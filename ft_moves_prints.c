@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:34:19 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/04 17:28:22 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:25:56 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,40 @@ void	move_prints(t_node **stack_a, t_node **stack_b, t_move mov)
 	if (mov == SA)
 	{
 		sa(stack_a);
-		//ft_printf("sa\n");
+		ft_printf("sa\n");
 	}
 	else if (mov == RA)
 	{
 		ra(stack_a);
-		//ft_printf("ra\n");
+		ft_printf("ra\n");
 	}
 	else if (mov == RRA)
 	{
 		rra(stack_a);
-		//ft_printf("rra\n");
+		ft_printf("rra\n");
 	}
 	else if (mov == PB)
 	{
-		pb(stack_a,stack_b);
-		//ft_printf("pb\n");
+		pb(stack_a, stack_b);
+		ft_printf("pb\n");
+	}
+	else if (mov == RRR)
+	{
+		rrr(stack_a,stack_b);
+		ft_printf("rrr\n");
+	}
+}
+
+void move_prints_b(t_node **stack_a, t_node **stack_b, t_move mov)
+{
+	if(mov == RR)
+	{
+		rr(stack_a,stack_b);
+		printf("rr\n");
+	}
+	else if(mov == PA)
+	{
+		pa(stack_a,stack_b);
+		printf("pa\n");
 	}
 }

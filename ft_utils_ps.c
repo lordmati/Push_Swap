@@ -6,28 +6,28 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:30:40 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/06 15:38:02 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/11 21:05:35 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_highest(t_node *stack)
+int	ft_find_lower_cost(t_node *stack)
 {
-	int		result;
+	int		lower;
 	t_node	*aux;
 
 	aux = stack;
-	result = aux->number;
+	lower = aux->cost_total;
 	while (1)
 	{
-		if (aux->number > result)
-			result = aux->number;
+		if (aux->cost_total < lower)
+			lower = aux->cost_total;
 		aux = aux->next;
 		if (aux == stack)
 			break ;
 	}
-	return (result);
+	return (lower);
 }
 
 void	ft_calc_index(t_node **stack_a, int len, int size, int aux_len)
@@ -76,17 +76,17 @@ void	ft_calc_position(t_node **stack_a, int len)
 	}
 }
 
-int	ft_list_size(t_node **stack)
+int	ft_list_size(t_node *stack)
 {
 	int		size;
 	t_node	*aux;
 	t_node	*initial_node;
 
 	size = 0;
-	aux = *stack;
-	initial_node = *stack;
-	if(*stack == NULL)
-		return(0);
+	aux = stack;
+	initial_node = stack;
+	if (stack == NULL)
+		return (0);
 	while (aux->next != initial_node)
 	{
 		size++;
@@ -112,3 +112,20 @@ int	ft_find_lower_index(t_node *stack)
 	}
 	return (result);
 }
+/* int	ft_find_max_index(t_node *stack)
+{
+	int		result;
+	t_node	*aux;
+
+	aux = stack;
+	result = aux->index;
+	while (1)
+	{
+		if (aux->index > result)
+			result = aux->index;
+		aux = aux->next;
+		if (aux == stack)
+			break ;
+	}
+	return (result);
+} */

@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:55:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/06 12:16:48 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:13:52 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	ft_convertnumbers(int argc, char **argv, int i)
 
 void	ft_setup(int argc, int *tab)
 {
+	int i;
+	i = 0;
 	t_node	*stack_a;
 	t_node	*stack_b;
 
@@ -80,19 +82,29 @@ void	ft_setup(int argc, int *tab)
 	else
 		stack_a = ft_stack_a(tab, argc);
 	if (ft_is_order(stack_a) == 1)
-		exit(0);
-	ft_calc_index(&stack_a, argc + 1, argc, argc);
-	ft_push_all_b(&stack_a,&stack_b,argc);
-	ft_calc_position(&stack_a,ft_list_size(&stack_a));
-	ft_calc_position(&stack_b,ft_list_size(&stack_b));
-	printeo(&stack_a,ft_list_size(&stack_a));
-	ft_target_find(&stack_a,&stack_b);
-	ft_cost(&stack_a,&stack_b,ft_list_size(&stack_b));
-	printeo_b(&stack_b,ft_list_size(&stack_b));
+			exit(0);
 	if (argc == 2)
 		move_prints(&stack_a, &stack_b, 1);
 	else if (argc == 3)
 		ft_sort_three(&stack_a);
+	ft_calc_index(&stack_a,argc + 1, argc ,argc);
+	ft_push_all_b(&stack_a,&stack_b,ft_list_size(stack_a));
+	ft_sort_three(&stack_a);
+/* 	ft_target_find(&stack_a,&stack_b);
+	ft_cost(&stack_a,&stack_b,ft_list_size(stack_b));
+	printeo_b(&stack_b,ft_list_size(stack_b)); */
+/* 	move_prints_b(&stack_b,&stack_a,PA);
+	move_prints_b(&stack_b,&stack_a,PA);
+	printf("tamaño a: %d\n", ft_list_size(stack_a));
+	printf("tamaño b: %d\n",ft_list_size(stack_b)); */
+	printeo(&stack_a,3);
+	while(ft_list_size(stack_b) > 0)
+	{
+		ft_target_find(&stack_a,&stack_b);
+		ft_cost(&stack_a,&stack_b,ft_list_size(stack_b));
+		ft_moves_stacks(&stack_a,&stack_b,ft_list_size(stack_b));
+	}
+	printeo(&stack_a,ft_list_size(stack_a));
 }
 
 void	ft_sort_three(t_node **stack_a)

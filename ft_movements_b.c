@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:05:18 by misaguir          #+#    #+#             */
-/*   Updated: 2024/02/23 16:44:11 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:17:10 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,25 @@
     head_b->number = head_b->next->number;
     head_b->next->number = aux;
     printf("sb\n");
-}
+} */
 
-void rb(t_node **head_b)////// REVISAR
+void rb(t_node **head_b)
 {
     *head_b = (*head_b)->next;
-    printf("rb\n");
 }
 
-void rrb(t_node **head_b)////// REVISAR
+void rrb(t_node **head_b)
 {
     *head_b = (*head_b)->prev;
-    printf("rrb\n");
 }
 
-void rr(t_node **head,t_node **head_b) ////// REVISAR
+void rr(t_node **head,t_node **head_b)
 {
-    ra(&head);
-    rb(&head_b);
+    ra(head);
+    rb(head_b);
 }
-void rrr(t_node **head,t_node **head_b) ////// REVISAR
+void rrr(t_node **head,t_node **head_b)
 {
-    rra(&head);
-    rrb(&head_b);
-} */
+    rra(head);
+    rrb(head_b);
+}
