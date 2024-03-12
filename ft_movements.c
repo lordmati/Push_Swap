@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:38:25 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/11 18:59:57 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:37:35 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_node **head)
 {
 	int	aux;
-	int temp;
+	int	temp;
 
 	aux = (*head)->number;
 	(*head)->number = (*head)->next->number;
@@ -58,57 +58,33 @@ void	pb(t_node **head, t_node **head_b)
 	*head = aux;
 }
 
-/* void	pa(t_node **head_b, t_node **head)
-{
-	t_node	*aux;
-
-	aux = (*head_b)->next;
-	(*head_b)->next->prev = (*head_b)->prev;
-	(*head_b)->prev->next = (*head_b)->next;
-	if (!(*head))
-	{
-		(*head_b)->next = *head_b;
-		(*head_b)->prev = *head_b;
-	}
-	else
-	{
-		(*head_b)->next = *head;
-		(*head_b)->prev = (*head)->prev;
-		(*head)->prev->next = *head_b;
-		(*head)->prev = *head_b;
-	}
-	*head = *head_b;
-	*head_b = aux;
-} */
 void	pa(t_node **head_b, t_node **head)
 {
-	if(*head_b)
+	if (*head_b)
 	{
-		t_node *aux;
-		aux = *head_b;
-		if (*head_b == (*head_b)->next) // Si solo hay un nodo en el stack B
-            *head_b = NULL;
-        else
-        {
-            (*head_b)->prev->next = (*head_b)->next;
-            (*head_b)->next->prev = (*head_b)->prev;
-            *head_b = (*head_b)->next; // Actualizar la cabeza del stack B
-        }
+		t_node	*aux;
 
-        // Conectar el nodo a la cima del stack A
-        if (!(*head)) // Si el stack A está vacío
-        {
-            aux->next = aux;
-            aux->prev = aux;
-        }
-        else
-        {
-            aux->next = *head;
-            aux->prev = (*head)->prev;
-            (*head)->prev->next = aux;
-            (*head)->prev = aux;
-        }
-        // Actualizar la cabeza del stack A
-        *head = aux;
+		aux = *head_b;
+		if (*head_b == (*head_b)->next)
+			*head_b = NULL;
+		else
+		{
+			(*head_b)->prev->next = (*head_b)->next;
+			(*head_b)->next->prev = (*head_b)->prev;
+			*head_b = (*head_b)->next;
+		}
+		if (!(*head))
+		{
+			aux->next = aux;
+			aux->prev = aux;
+		}
+		else
+		{
+			aux->next = *head;
+			aux->prev = (*head)->prev;
+			(*head)->prev->next = aux;
+			(*head)->prev = aux;
+		}
+		*head = aux;
 	}
 }

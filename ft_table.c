@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 19:30:35 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 16:03:29 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:30:07 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,35 +50,36 @@ t_node	*ft_stack_a(int *tab, int len)
 	node->next = head;
 	return (head);
 }
-void ft_move_rotate_a(t_node **stack_a,t_node **stack_b,int *cost)
+
+void	ft_move_rotate_a(t_node **stack_a, t_node **stack_b, int *cost)
 {
-	while(*cost)
+	while (*cost)
 	{
-		if(*cost > 0)
+		if (*cost > 0)
 		{
-			move_prints(stack_a,stack_b,RA);
+			move_prints(stack_a, stack_b, RA);
 			(*cost)--;
 		}
 		else if (*cost < 0)
 		{
-			move_prints(stack_a,stack_b,RRA);
+			move_prints(stack_a, stack_b, RRA);
 			(*cost)++;
 		}
 	}
 }
 
-void ft_move_rotate_b(t_node **stack_a,t_node **stack_b,int *cost)
+void	ft_move_rotate_b(t_node **stack_a, t_node **stack_b, int *cost)
 {
-	while(*cost)
+	while (*cost)
 	{
-		if(*cost > 0)
+		if (*cost > 0)
 		{
-			move_prints_b(stack_a,stack_b,RB);
+			move_prints_b(stack_a, stack_b, RB);
 			(*cost)--;
 		}
 		else if (*cost < 0)
 		{
-			move_prints_b(stack_a,stack_b,RRB);
+			move_prints_b(stack_a, stack_b, RRB);
 			(*cost)++;
 		}
 	}

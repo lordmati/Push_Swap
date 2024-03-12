@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:30:40 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 14:49:22 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:30:31 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	ft_find_lower_index(t_node *stack)
 {
 	int		result;
 	t_node	*aux;
-	t_node *tmp;
+	t_node	*tmp;
 
 	aux = stack;
 	result = INT_MAX;
@@ -117,20 +117,3 @@ int	ft_find_lower_index(t_node *stack)
 	}
 	return (tmp->pos);
 }
-/* int	ft_find_max_index(t_node *stack)
-{
-	int		result;
-	t_node	*aux;
-
-	aux = stack;
-	result = aux->index;
-	while (1)
-	{
-		if (aux->index > result)
-			result = aux->index;
-		aux = aux->next;
-		if (aux == stack)
-			break ;
-	}
-	return (result);
-} */
