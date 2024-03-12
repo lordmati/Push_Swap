@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:27:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:35:01 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:55:49 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,9 @@ void	ft_final_moves(t_node **stack_a, t_node **stack_b, t_node *low_cost_b)
 	cost_a = low_cost_b->cost_a;
 	cost_b = low_cost_b->cost_b;
 	if (cost_a < 0 && cost_b < 0)
-	{
-		while (cost_a < 0 && cost_b < 0)
-		{
-			move_prints(stack_a, stack_b, RRR);
-			cost_a++;
-			cost_b++;
-		}
-	}
+		ft_move_rotate_rr(stack_a, stack_b, &cost_a, &cost_b);
 	else if (cost_a > 0 && cost_b > 0)
-	{
-		while (cost_a > 0 && cost_b > 0)
-		{
-			move_prints_b(stack_a, stack_b, RR);
-			cost_a--;
-			cost_b--;
-		}
-	}
+		ft_move_rotate_rrr(stack_a, stack_b, &cost_a, &cost_b);
 	ft_move_rotate_a(stack_a, stack_b, &cost_a);
 	ft_move_rotate_b(stack_a, stack_b, &cost_b);
 	move_prints_b(stack_b, stack_a, PA);

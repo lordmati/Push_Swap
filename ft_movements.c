@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:38:25 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:37:35 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:31:38 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,31 +60,12 @@ void	pb(t_node **head, t_node **head_b)
 
 void	pa(t_node **head_b, t_node **head)
 {
+	t_node	*aux;
+
 	if (*head_b)
 	{
-		t_node	*aux;
-
 		aux = *head_b;
-		if (*head_b == (*head_b)->next)
-			*head_b = NULL;
-		else
-		{
-			(*head_b)->prev->next = (*head_b)->next;
-			(*head_b)->next->prev = (*head_b)->prev;
-			*head_b = (*head_b)->next;
-		}
-		if (!(*head))
-		{
-			aux->next = aux;
-			aux->prev = aux;
-		}
-		else
-		{
-			aux->next = *head;
-			aux->prev = (*head)->prev;
-			(*head)->prev->next = aux;
-			(*head)->prev = aux;
-		}
-		*head = aux;
+		remove_node_pa(head_b);
+		add_to_head_pa(&aux, head);
 	}
 }

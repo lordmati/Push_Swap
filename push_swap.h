@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:36:02 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:25:03 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,9 @@ void	ft_move_rotate_a(t_node **stack_a, t_node **stack_b, int *cost);
 void	ft_move_rotate_b(t_node **stack_a, t_node **stack_b, int *cost);
 int		ft_find_max_index(t_node *stack);
 void	ft_final_step(t_node **stack_a, t_node **stack_b);
+void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
+void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
+void	add_to_head_pa(t_node **head_b, t_node **head);
+void	remove_node_pa(t_node **head_b);
 
 #endif
