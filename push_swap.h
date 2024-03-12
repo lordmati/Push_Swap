@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/11 20:47:13 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:00:47 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ int		ft_cost_top(t_node **stack, int pos);
 int		ft_target_find_norm(t_node **aux_a, t_node **aux_b, int size_a);
 int		ft_find_lower_cost(t_node *stack);
 int		ft_abs(int n);
-void	ft_final_moves(t_node **stack_a,t_node **stack_b,int cost_a,int cost_b);
+void	ft_final_moves(t_node **stack_a,t_node **stack_b,t_node *low_cost_b);
 void	ft_moves_stacks(t_node **stack_a,t_node **stack_b, int len);
-void	ft_move_rotate_a(t_node **stack_a,t_node **stack_b,int cost);
-void	ft_move_rotate_b(t_node **stack_a,t_node **stack_b,int cost);
+void	ft_move_rotate_a(t_node **stack_a,t_node **stack_b,int *cost);
+void	ft_move_rotate_b(t_node **stack_a,t_node **stack_b,int *cost);
 int		ft_find_max_index(t_node *stack);
 
 #endif

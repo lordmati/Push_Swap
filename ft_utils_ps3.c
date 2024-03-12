@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:27:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/10 18:08:19 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:08:30 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,33 @@ void	ft_moves_stacks(t_node **stack_a,t_node **stack_b, int len)
 	i = 0;
 	t_node *aux_b;
 	aux_b = *stack_b;
-	int cost_a;
-	int cost_b;
+	t_node *cost_b;
+	cost_b = NULL;
 	int num;
 	num = INT_MAX;
 	while (i < len)
 	{
-		if(ft_abs(aux_b->cost_a) + ft_abs(aux_b->cost_a) < num)
+		if(ft_abs(aux_b->cost_a) + ft_abs(aux_b->cost_b) < num)
 		{
-			num = ft_abs(aux_b->cost_a) + ft_abs(aux_b->cost_a);
-			cost_a = aux_b->cost_a;
-			cost_b = aux_b->cost_b;
+			num = ft_abs(aux_b->cost_a) + ft_abs(aux_b->cost_b);
+			cost_b = aux_b;
 		}
 		aux_b = aux_b->next;
 		i++;
 	}
-	ft_final_moves(stack_a,stack_b,cost_a,cost_b);
+/* 	printf("ANTES DE FINAL MOVES COSTO A: %d\n", cost_a);
+	printf("ANTES DE FINAL MOVES ACCEDIENDO COSTO A: %d\n",(aux_b)->cost_a);
+	printf("ANTES DE FINAL MOVES COSTO B: %d\n", cost_b);
+	printf("ANTES DE FINAL MOVES ACCEDIENDO COSTO B: %d\n",(aux_b)->cost_b); */
+	ft_final_moves(stack_a,stack_b,cost_b);
 }
 
-void ft_final_moves(t_node **stack_a,t_node **stack_b,int cost_a,int cost_b)
+void ft_final_moves(t_node **stack_a,t_node **stack_b,t_node *low_cost_b)
 {
+	int cost_a;
+	int cost_b;
+	cost_a = low_cost_b->cost_a;
+	cost_b = low_cost_b->cost_b;
 	if(cost_a < 0 && cost_b < 0)
 	{
 		while(cost_a < 0 && cost_b < 0)
@@ -76,7 +83,11 @@ void ft_final_moves(t_node **stack_a,t_node **stack_b,int cost_a,int cost_b)
 			cost_b--;
 		}
 	}
-	ft_move_rotate_a(stack_a,stack_b,cost_a);
-	ft_move_rotate_b(stack_a,stack_b,cost_b);
+/* 	printf("COSTO A: %d\n", cost_a);
+	printf("ACCEDIENDO COSTO A: %d\n",(*stack_b)->cost_a);
+	printf("COSTO B: %d\n", cost_b);
+	printf("ACCEDIENDO COSTO B: %d\n",(*stack_b)->cost_b); */
+	ft_move_rotate_a(stack_a,stack_b,&cost_a);
+	ft_move_rotate_b(stack_a,stack_b,&cost_b);
 	move_prints_b(stack_b,stack_a,PA);
 }
