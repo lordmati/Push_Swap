@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 20:25:03 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:29:52 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,6 @@ void	ss(t_node **head, t_node **head_b);
 /////MOVEMENTS PRINTS/////
 void	move_prints(t_node **stack_a, t_node **stack_b, t_move mov);
 void	move_prints_b(t_node **stack_a, t_node **stack_b, t_move mov);
-void	printeo(t_node **stack_a, int len);/////////////BORRAR////////
-void	printeo_b(t_node **stack_b, int len);///////////BORRARR///////
-void	ft_push(t_node **head, int n);
-int		ft_pop(t_node **head);
 ////////////ORDER//////////
 int		ft_is_order(t_node *head);
 int		ft_find_lower_index(t_node *stack);
@@ -102,5 +98,6 @@ void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
 void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
 void	add_to_head_pa(t_node **head_b, t_node **head);
 void	remove_node_pa(t_node **head_b);
+void	ft_final_order(t_node **stack_a ,t_node **stack_b,int aux);
 
 #endif

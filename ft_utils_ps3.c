@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:27:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:55:49 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:28:52 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ void	ft_final_moves(t_node **stack_a, t_node **stack_b, t_node *low_cost_b)
 void	ft_final_step(t_node **stack_a, t_node **stack_b)
 {
 	int	aux;
-	int	i;
 
-	i = 0;
 	while (ft_list_size(*stack_b) > 0)
 	{
 		ft_target_find(stack_a, stack_b);
@@ -73,9 +71,27 @@ void	ft_final_step(t_node **stack_a, t_node **stack_b)
 	}
 	ft_calc_position(stack_a, ft_list_size(*stack_a));
 	aux = ft_find_lower_index(*stack_a);
-	while (i < aux)
+	ft_final_order(stack_a, stack_b, aux);
+}
+void ft_final_order(t_node **stack_a ,t_node **stack_b,int aux)
+{
+	int i;
+
+	i = 0;
+	if(aux <= (ft_list_size(*stack_a) / 2))
 	{
-		move_prints(stack_a, stack_b, RA);
-		i++;
+		while(i < aux)
+		{
+			move_prints(stack_a, stack_b, RA);
+			i++;
+		}
+	}
+	else
+	{
+		while(i < aux)
+		{
+			move_prints(stack_a, stack_b, RRA);
+			i++;
+		}
 	}
 }
