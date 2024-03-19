@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:55:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 15:59:53 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 20:23:47 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_convertnumbers(int argc, char **argv, int i)
 	j = 0;
 	tab = (int *)(malloc(sizeof(int) * argc));
 	if (tab == NULL)
-		exit(0);
+		return;
 	while (argv[i] != NULL)
 	{
 		tab[j] = ft_atol(argv[i]);
@@ -64,7 +64,10 @@ void	ft_convertnumbers(int argc, char **argv, int i)
 		i++;
 	}
 	if (argc == 1)
+	{
+		free(tab);
 		return ;
+	}
 	ft_setup(argc, tab);
 }
 
@@ -79,6 +82,7 @@ void	ft_setup(int argc, int *tab)
 		ft_show_error();
 	else
 		stack_a = ft_stack_a(tab, argc);
+	free(tab);
 	if (ft_is_order(stack_a) == 1)
 		exit(0);
 	if (argc == 2)
@@ -89,6 +93,7 @@ void	ft_setup(int argc, int *tab)
 	ft_push_all_b(&stack_a, &stack_b, ft_list_size(stack_a));
 	ft_sort_three(&stack_a);
 	ft_final_step(&stack_a, &stack_b);
+	free_stack(&stack_a);
 }
 
 void	ft_sort_three(t_node **stack_a)
