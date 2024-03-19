@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:47:15 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 20:30:56 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:24:28 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
 	}
 }
 
-void	add_to_head_pa(t_node **head_b, t_node **head)
+void	add_to_head(t_node **head_b, t_node **head)
 {
 	t_node	*aux;
 
@@ -52,7 +52,7 @@ void	add_to_head_pa(t_node **head_b, t_node **head)
 	*head = aux;
 }
 
-void	remove_node_pa(t_node **head_b)
+void	remove_node(t_node **head_b)
 {
 	t_node	*aux;
 

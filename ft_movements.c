@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:38:25 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 20:31:38 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:23:04 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	sa(t_node **head)
 	int	aux;
 	int	temp;
 
+	if (ft_list_size(*head) < 1)
+		return ;
 	aux = (*head)->number;
 	(*head)->number = (*head)->next->number;
 	(*head)->next->number = aux;
@@ -39,23 +41,12 @@ void	pb(t_node **head, t_node **head_b)
 {
 	t_node	*aux;
 
-	aux = (*head)->next;
-	(*head)->next->prev = (*head)->prev;
-	(*head)->prev->next = (*head)->next;
-	if (!(*head_b))
+	if (*head)
 	{
-		(*head)->next = *head;
-		(*head)->prev = *head;
+		aux = *head;
+		remove_node(head);
+		add_to_head(&aux, head_b);
 	}
-	else
-	{
-		(*head)->next = *head_b;
-		(*head)->prev = (*head_b)->prev;
-		(*head_b)->prev->next = *head;
-		(*head_b)->prev = *head;
-	}
-	*head_b = *head;
-	*head = aux;
 }
 
 void	pa(t_node **head_b, t_node **head)
@@ -65,7 +56,7 @@ void	pa(t_node **head_b, t_node **head)
 	if (*head_b)
 	{
 		aux = *head_b;
-		remove_node_pa(head_b);
-		add_to_head_pa(&aux, head);
+		remove_node(head_b);
+		add_to_head(&aux, head);
 	}
 }

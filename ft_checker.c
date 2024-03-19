@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:55:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:22:00 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:59:53 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_setup(int argc, int *tab)
 	if (ft_is_order(stack_a) == 1)
 		exit(0);
 	if (argc == 2)
-		move_prints(&stack_a, &stack_b, 1);
+		move_prints(&stack_a, &stack_b, SA);
 	else if (argc == 3)
 		ft_sort_three(&stack_a);
 	ft_calc_index(&stack_a, argc + 1, argc, argc);

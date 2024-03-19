@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:34:19 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:29:03 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:07:39 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,20 @@ void	move_prints_b(t_node **stack_a, t_node **stack_b, t_move mov)
 	{
 		rrb(stack_b);
 		ft_printf("rrb\n");
+	}
+	else if (mov == SB)
+	{
+		sb(stack_b);
+		ft_printf("sb\n");
+	}
+}
+
+void	move_prints_c(t_node **stack_a, t_node **stack_b, t_move mov)
+{
+	if (mov == SS)
+	{
+		sa(stack_a);
+		sb(stack_b);
+		ft_printf("ss\n");
 	}
 }

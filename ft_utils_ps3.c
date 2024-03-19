@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:27:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 11:28:52 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:25:32 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,15 @@ void	ft_final_step(t_node **stack_a, t_node **stack_b)
 	aux = ft_find_lower_index(*stack_a);
 	ft_final_order(stack_a, stack_b, aux);
 }
-void ft_final_order(t_node **stack_a ,t_node **stack_b,int aux)
+
+void	ft_final_order(t_node **stack_a, t_node **stack_b, int aux)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if(aux <= (ft_list_size(*stack_a) / 2))
+	if (aux <= (ft_list_size(*stack_a) / 2))
 	{
-		while(i < aux)
+		while (i < aux)
 		{
 			move_prints(stack_a, stack_b, RA);
 			i++;
@@ -88,7 +89,7 @@ void ft_final_order(t_node **stack_a ,t_node **stack_b,int aux)
 	}
 	else
 	{
-		while(i < aux)
+		while (i < aux)
 		{
 			move_prints(stack_a, stack_b, RRA);
 			i++;

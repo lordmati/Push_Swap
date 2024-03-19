@@ -6,29 +6,11 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:30:40 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/12 19:30:31 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:13:52 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_find_lower_cost(t_node *stack)
-{
-	int		lower;
-	t_node	*aux;
-
-	aux = stack;
-	lower = aux->cost_total;
-	while (1)
-	{
-		if (aux->cost_total < lower)
-			lower = aux->cost_total;
-		aux = aux->next;
-		if (aux == stack)
-			break ;
-	}
-	return (lower);
-}
 
 void	ft_calc_index(t_node **stack_a, int len, int size, int aux_len)
 {
