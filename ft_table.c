@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 19:30:35 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 20:14:45 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:21:38 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,16 @@ void	ft_move_rotate_b(t_node **stack_a, t_node **stack_b, int *cost)
 		}
 	}
 }
+
 void	free_stack(t_node **head)
 {
-	t_node *aux;
-	t_node *temp;
+	t_node	*aux;
+	t_node	*temp;
 	int		size;
-	
+
 	aux = *head;
 	size = ft_list_size(*head);
-	while(size > 0)
+	while (size > 0)
 	{
 		temp = aux;
 		aux = aux->next;

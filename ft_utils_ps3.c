@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:27:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 16:45:35 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:36:10 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ void	ft_final_order(t_node **stack_a, t_node **stack_b, int aux)
 	}
 	else
 	{
-		while (i < aux)
+		i = aux;
+		while (i < ft_list_size(*stack_a))
 		{
 			move_prints(stack_a, stack_b, RRA);
 			i++;

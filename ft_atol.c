@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 12:46:20 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 20:12:37 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:22:34 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	ft_show_error(void)
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
-
