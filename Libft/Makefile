@@ -6,7 +6,7 @@
 #    By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 19:29:39 by misaguir          #+#    #+#              #
-#    Updated: 2024/02/27 12:31:40 by misaguir         ###   ########.fr        #
+#    Updated: 2024/03/21 20:33:01 by misaguir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,14 @@ SRCS_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
 
 SRCS_PRINTF = ft_printf.c ft_putnbr_pf.c ft_u.c \
 		 		ft_utils_pf.c  \
+
+SRCS_GNL = get_next_line.c get_next_line_utils.c \
 				
 CFLAGS = -Wall -Werror -Wextra
 OBJS_SRCS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 OBJS_PRINTF = $(SRCS_PRINTF:.c=.o)
+OBJS_GNL = $(SRCS_GNL:.c=.o)
 AR = ar rcs
 RM = rm -rf
 CC = gcc
@@ -45,6 +48,8 @@ printf:$(OBJS_SRCS) $(OBJS_PRINTF)
 	$(AR) $(NAME) $(OBJS_SRCS) $(OBJS_PRINTF)
 bonus: $(OBJS_SRCS) $(OBJS_BONUS)
 	$(AR) $(NAME) $(OBJS_SRCS) $(OBJS_BONUS)
+gnl: $(OBJS_SRCS) $(OBJS_GNL)
+	$(AR) $(NAME) $(OBJS_SRCS) $(OBJS_GNL)
 $(NAME): $(OBJS_SRCS)
 	$(AR) $(NAME) $(OBJS_SRCS)
 
@@ -56,4 +61,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: all clean fclean bonus re printf
+.PHONY: all clean fclean bonus re printf gnl

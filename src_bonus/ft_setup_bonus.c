@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_setup_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:55:01 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/20 12:37:18 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:34:02 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_onearg(char **argv)
 {
@@ -68,6 +68,8 @@ void	ft_convertnumbers(int argc, char **argv, int i)
 		free(tab);
 		exit(0);
 	}
+	if (ft_repeatnumbers(tab, argc) == 0)
+		ft_show_error();
 	ft_setup(argc, tab);
 }
 
@@ -78,10 +80,7 @@ void	ft_setup(int argc, int *tab)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ft_repeatnumbers(tab, argc) == 0)
-		ft_show_error();
-	else
-		stack_a = ft_stack_a(tab, argc);
+	stack_a = ft_stack_a(tab, argc);
 	free(tab);
 	if (ft_is_order(stack_a) == 1)
 		exit(0);

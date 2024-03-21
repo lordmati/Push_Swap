@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:16:00 by misaguir          #+#    #+#             */
-/*   Updated: 2024/02/27 12:31:02 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/21 20:34:16 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -82,5 +87,14 @@ int					ft_hexa(unsigned int n);
 int					ft_hexaup(unsigned int n);
 int					ft_point(unsigned long n);
 int					ft_hexaln(unsigned long n);
+//Get Next Line
+char				*ft_free_gnl(char *str);
+char				ft_strchr_gnl(char *str, int c);
+int					ft_strlen_gnl(char *str);
+char				*ft_strjoin_gnl(char *es, char *buff);
+char				*ft_file_read(char *estatic, int fd);
+char				*ft_get_line(char *estatic);
+char				*ft_new_estatic(char *estatic);
+char				*get_next_line(int fd);
 
 #endif
