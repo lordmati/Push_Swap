@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:30:40 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/20 18:15:31 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:57:52 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,10 @@ int	ft_find_lower_index(t_node *stack)
 			break ;
 	}
 	return (tmp->pos);
+}
+
+void	ss(t_node **stack_a, t_node **stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
 }

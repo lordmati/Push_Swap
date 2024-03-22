@@ -6,7 +6,7 @@
 #    By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 17:38:49 by misaguir          #+#    #+#              #
-#    Updated: 2024/03/21 20:36:02 by misaguir         ###   ########.fr        #
+#    Updated: 2024/03/22 15:59:08 by misaguir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ FILES = src/main.c src/ft_atol.c src/ft_setup.c src/ft_movements_b.c src/ft_move
 src/ft_moves.c src/ft_table.c src/ft_utils_ps.c src/ft_utils_ps2.c src/ft_utils_ps3.c src/ft_verification.c \
 
 FILES_BONUS = src_bonus/main_bonus.c src_bonus/ft_atol_bonus.c src_bonus/ft_setup_bonus.c src_bonus/ft_movements_b_bonus.c src_bonus/ft_movements_bonus.c src_bonus/ft_moves_prints_bonus.c \
-src_bonus/ft_moves_bonus.c src_bonus/ft_table_bonus.c src_bonus/ft_utils_ps_bonus.c src_bonus/ft_utils_ps2_bonus.c src_bonus/ft_utils_ps3_bonus.c src_bonus/ft_verification_bonus.c \
+src_bonus/ft_moves_bonus.c src_bonus/ft_table_bonus.c src_bonus/ft_utils_ps_bonus.c src_bonus/ft_utils_ps2_bonus.c src_bonus/ft_utils_ps3_bonus.c src_bonus/ft_verification_bonus.c src_bonus/ft_checker_utils_bonus.c \
 
 CC = gcc
 

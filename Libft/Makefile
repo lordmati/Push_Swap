@@ -6,7 +6,7 @@
 #    By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 19:29:39 by misaguir          #+#    #+#              #
-#    Updated: 2024/03/21 20:33:01 by misaguir         ###   ########.fr        #
+#    Updated: 2024/03/21 22:36:35 by misaguir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(NAME): $(OBJS_SRCS)
 	$(AR) $(NAME) $(OBJS_SRCS)
 
 clean:
-	@$(RM) $(OBJS_SRCS) $(OBJS_BONUS) $(OBJS_PRINTF)
+	@$(RM) $(OBJS_SRCS) $(OBJS_BONUS) $(OBJS_PRINTF) $(OBJS_GNL)
 
 fclean: clean
 	@$(RM) $(NAME)

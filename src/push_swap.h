@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/21 14:15:19 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:16:26 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_show_error(void);
 int		ft_list_size(t_node *stack);
 int		ft_find_lower_index(t_node *stack);
 void	free_stack(t_node **head);
-void	ft_free_matrix(char **str);
+void	free_stack_and_exit(t_node **head);
 /////MOVEMENTS/////
 void	sa(t_node **head);
 void	ra(t_node **head);

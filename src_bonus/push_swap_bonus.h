@@ -6,7 +6,7 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:54:38 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/21 14:13:48 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:57:41 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,9 @@ void	ft_final_step(t_node **stack_a, t_node **stack_b);
 void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
 void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b);
 void	ft_final_order(t_node **stack_a, t_node **stack_b, int aux);
-
+/////////BONUS////////////
+void	ss(t_node **stack_a, t_node **stack_b);
+void	ft_instruction(char *str, t_node **stack_a, t_node **stack_b);
+void	ft_read_instruction(t_node **stack_a, t_node **stack_b);
+void	ft_check_instruction(t_node **stack_a, t_node **stack_b);
 #endif
