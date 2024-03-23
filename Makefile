@@ -6,7 +6,7 @@
 #    By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 17:38:49 by misaguir          #+#    #+#              #
-#    Updated: 2024/03/22 15:59:08 by misaguir         ###   ########.fr        #
+#    Updated: 2024/03/23 15:35:29 by misaguir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ LIBFT_DIR = Libft/
 
 LIBFT = libft.a
 
-SRCS_DIR = src #$(wildcard *.c)
+SRCS_DIR = src
 OBJ_DIR	= obj
 
 OBJ_DIR_BONUS = obj_bonus
