@@ -6,13 +6,13 @@
 /*   By: misaguir <misaguir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:47:15 by misaguir          #+#    #+#             */
-/*   Updated: 2024/03/19 16:24:28 by misaguir         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:24:51 by misaguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
+void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
 {
 	while (*c_a < 0 && *c_b < 0)
 	{
@@ -22,7 +22,7 @@ void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
 	}
 }
 
-void	ft_move_rotate_rrr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
+void	ft_move_rotate_rr(t_node **st_a, t_node **st_b, int *c_a, int *c_b)
 {
 	while (*c_a > 0 && *c_b > 0)
 	{
